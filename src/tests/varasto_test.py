@@ -3,6 +3,7 @@ from varasto import Varasto
 
 
 class TestVarasto(unittest.TestCase):
+    #Varaston testaaminen
     def setUp(self):
         self.varasto = Varasto(10)
 
