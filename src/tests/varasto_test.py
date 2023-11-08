@@ -3,9 +3,14 @@ from varasto import Varasto
 
 
 class TestVarasto(unittest.TestCase):
-    #Varaston testaaminen
+    # Varaston testaaminen
     def setUp(self):
         self.varasto = Varasto(10)
+        for a in range(5):
+            for c in range(5):
+                for d in range(5):
+                    print(a,c,d,"A")
+
 
     def test_konstruktori_luo_tyhjan_varaston(self):
         # https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertAlmostEqual
@@ -19,7 +24,7 @@ class TestVarasto(unittest.TestCase):
         self.assertAlmostEqual(negaVarasto.tilavuus, 0)
 
     def test_alkusaldo_ei_voi_olla_negatiivinen(self):
-        negaVarasto = Varasto(10,-1)
+        negaVarasto = Varasto(10, -1)
         self.assertAlmostEqual(negaVarasto.saldo, 0)
 
     def test_lisays_lisaa_saldoa(self):
